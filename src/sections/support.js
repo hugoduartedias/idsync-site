@@ -3,7 +3,7 @@
 import { jsx, Box, Container, Heading, Text } from 'theme-ui';
 import SupportType from 'components/cards/support-type';
 import Image from 'components/image';
-import illustration from 'assets/images/support-2.png';
+import illustration from 'assets/images/support-2.png'; // mantenha a ilustração se for a mesma
 import icon1 from 'assets/images/icons/1.png';
 import icon2 from 'assets/images/icons/2.png';
 
@@ -11,14 +11,14 @@ const data = [
   {
     id: 1,
     icon: icon1,
-    title: 'Email client support',
-    text: `Ultimate access to all credit popular exercises and assessments materials`,
+    title: 'Flexibilidade na Integração',
+    text: `Nossa plataforma é projetada para integrar-se perfeitamente aos sistemas existentes, sejam pequenos negócios ou grandes corporações, oferecendo flexibilidade para personalização conforme as necessidades dos clientes.`,
   },
   {
     id: 2,
     icon: icon2,
-    title: 'Live ticket support',
-    text: `Total assessment corrections with live support tickets download access system`,
+    title: 'Soluções Personalizadas',
+    text: `Permita que sua empresa adapte as soluções de forma única, garantindo que todas as funcionalidades atendam especificamente aos requisitos da sua operação, sem comprometer a eficiência.`,
   },
 ];
 
@@ -30,25 +30,18 @@ const Support = () => {
           <div sx={styles.content}>
             <div sx={styles.heading}>
               <Heading sx={styles.title}>
-                Do you need help? Our support team ready to help you
+                Flexibilidade e Integração Simples
               </Heading>
               <Text as="p" sx={styles.summary}>
-                Get your tests delivered at let home collect sample from the
-                victory of the managements that supplies best design system
-                guidelines ever.
+                Nossa plataforma é projetada para se integrar perfeitamente aos sistemas existentes das empresas, sejam elas pequenas ou grandes, garantindo personalização conforme as necessidades específicas.
               </Text>
             </div>
-            {/* <SectionHeading
-              sx={styles.heading}
-              title="Do you need help? Our support team ready to help you"
-              description="Get your tests delivered at let home collect sample from the victory of the managements that supplies best design system guidelines ever."
-            /> */}
             {data.map((support) => (
               <SupportType key={support.id} data={support} />
             ))}
           </div>
           <Box as="figure" sx={styles.illustration} className="illustration">
-            <Image src={illustration} alt="illustration" />
+            <Image src={illustration} alt="Ilustração de Integração" />
           </Box>
         </div>
       </Container>

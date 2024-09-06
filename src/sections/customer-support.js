@@ -24,7 +24,7 @@ const CustomerSupport = () => {
               Sobre a IdSync
             </Heading>
             <Text as="p" sx={styles.summary}>
-              A IdSync é uma plataforma inovadora que centraliza sua identidade digital, permitindo que você acesse seus dados de forma segura e conveniente em qualquer lugar. Nosso objetivo é simplificar a vida digital das pessoas, garantindo que suas informações estejam sempre ao seu alcance, sem comprometer a segurança.
+              A IdSync é uma startup inovadora que oferece soluções completas para verificação e validação de identidades digitais. Nossa plataforma utiliza tecnologias avançadas como biometria facial, comparação de documentos e verificação de comprovantes de endereço (CEP), garantindo que suas informações sejam processadas de maneira rápida e segura.
             </Text>
 
             <Grid sx={styles.list} as="ul">

@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Box, Flex, Container, Heading, Text } from 'theme-ui';
-import { rgba } from 'polished';
+import { rgba, textInputs } from 'polished';
 import Image from 'components/image';
 import SubscriptionForm from 'components/subscription-form';
 import illustration from 'assets/images/banner-bg.png';
@@ -37,16 +37,6 @@ const Banner = () => {
               A IdSync conecta suas informações em um único lugar, simplificando seu acesso e garantindo sua segurança.
             </Text>
             <SubscriptionForm sx={styles.subscriptionForm} />
-            <Flex sx={styles.sponsoredBy}>
-              <Text as="span">Our clients</Text>
-              <Flex sx={styles.sponsor}>
-                {logos?.map((logo, index) => (
-                  <Flex as="figure" key={index}>
-                    <Image src={logo.src} alt={logo.name} />
-                  </Flex>
-                ))}
-              </Flex>
-            </Flex>
           </Box>
         </Box>
       </Container>
@@ -74,47 +64,50 @@ const styles = {
     },
   },
   bannerContent: {
-    maxWidth: [null, null, 450, '600px', null, 'none'],
-    m: [null, null, '0 auto', null, 0],
-    textAlign: ['center', null, null, null, 'left'],
+    maxWidth: ['100%', '100%', '450px', '600px', '100%', 'none'],
+    m: ['0 auto', '0 auto', '0 auto', '0 auto', 0],
+    textAlign: 'left', // Alinhando o texto à esquerda em todas as resoluções
     h1: {
       fontFamily: 'headingAlt',
-      fontSize: [9, null, null, 10, 12, 45, 16],
-      lineHeight: [1.31, null, null, 1.5, null, 1.26],
+      fontSize: [16, null, null, 20, 24, 45, 48], // Ajustando os tamanhos de fonte para uma transição suave
+      lineHeight: [1.26, null, null, 1.5, null, 1.26],
       letterSpacing: [0, null, null, null, '-1.5px'],
       color: 'textSecondary',
     },
     p: {
-      fontSize: ['13px', null, null, 2, 3],
-      lineHeight: [1.87, null, null, 2, null, 2.33],
+      fontSize: ['14px', null, null, '16px', '18px'], // Ajustando os tamanhos de fonte para a descrição
+      lineHeight: [1.5, null, null, 1.7, null, 2.33],
       color: 'textSecondary',
-      maxWidth: [null, null, 370, 470],
-      m: ['20px auto 0', null, null, null, '25px auto 0'],
+      maxWidth: [null, null, '370px', '470px'],
+      m: ['20px auto 0', null, null, null, '25px 0 0'], // Ajustando a margem para melhor alinhamento
+    },
+},
+
+subscriptionForm: {
+  maxWidth: ['100%', '100%', '100%', '470px', 'none'], // Ajuste de largura máxima para ser mais responsivo
+  m: ['30px 0 0', null, null, '30px 0', '35px 0 0'], // Margem ajustada para alinhar à esquerda
+  input: {
+    backgroundColor: '#FFFFFF',
+    border: '0 none',
+    fontFamily: 'body',
+    fontSize: [1, null, null, null, 2],
+    px: [3, null, null, 5],
+    boxShadow: '0px 16px 40px rgba(72, 59, 26, 0.08)',
+    minHeight: [40, 50, null, null, null, 60],
+    textAlign: 'left', // Garantir que o texto dentro do input seja alinhado à esquerda
+    '::placeholder': {
+      color: 'rgba(2, 7, 62, 0.4)',
+      opacity: 1, // Compatibilidade com Firefox
     },
   },
-  subscriptionForm: {
-    maxWidth: [null, null, null, 470, 'none'],
-    m: ['30px 0 0', null, null, '30px auto', '35px 0 0'],
-    input: {
-      backgroundColor: '#FFFFFF',
-      border: '0 none',
-      fontFamily: 'body',
-      fontSize: [1, null, null, null, 2],
-      px: [3, null, null, 5],
-      boxShadow: '0px 16px 40px rgba(72, 59, 26, 0.08)',
-      minHeight: [40, 50, null, null, null, 60],
-      /* Chrome, Firefox, Opera, Safari 10.1+ */
-      '::placeholder': {
-        color: rgba('#02073E', 0.4),
-        opacity: 1 /* Firefox */,
-      },
-    },
-    button: {
-      fontSize: [0, 1, null, null, 2],
-      minHeight: [40, 50, null, null, null, 60],
-      px: ['18px', null, null, null, 6],
-    },
+  button: {
+    fontSize: [0, 1, null, null, 2],
+    minHeight: [40, 50, null, null, null, 60],
+    px: ['18px', null, null, null, 6],
+    textAlign: 'left', // Alinhando o botão à esquerda
   },
+},
+
   sponsoredBy: {
     alignItems: 'center',
     justifyContent: ['center', null, null, 'flex-start'],
